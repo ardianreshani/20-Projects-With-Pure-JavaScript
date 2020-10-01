@@ -9,7 +9,7 @@ const calculateWealthBtn = document.getElementById('calculate-wealth');
 let  data = [];
 getRandomUser();
 getRandomUser();
-getRandomUser();
+
 
 
 
@@ -24,7 +24,31 @@ getRandomUser();
   }
   addData(newUser);
 }
+function doubleMoney(){
+    data = data.map( (user) => {
+      return {...user, money: user.money * 2};
+      
+    });
+    updateDOM();
+}
 
+function sortByRiches() {
+  data.sort((a,b) => b.money - a.money);
+  updateDOM();
+}
+
+function showMillioaires(){
+  data = data.filter( item => {return item.money >  1000000});
+  updateDOM();
+}
+
+function calculateWealth(){
+  const wealth = data.reduce((acc,user) => (acc += user.money), 0);
+
+  const wealthEL = document.createElement('div');
+  wealthEL.innerHTML = `<h3> Total Wealth: <strong> ${formatMoney(wealth)}</strong></h3>`;
+  main.appendChild(wealthEL);
+}
 function addData(obj){
   data.push(obj);
 
@@ -46,3 +70,7 @@ function formatMoney(number){
 }
 
 addUserBtn.addEventListener('click', getRandomUser);
+doubleBtn.addEventListener('click' , doubleMoney);
+sortBtn.addEventListener('click' , sortByRiches);
+showMillionairesBtn.addEventListener('click', showMillioaires);
+calculateWealthBtn.addEventListener('click',calculateWealth );
