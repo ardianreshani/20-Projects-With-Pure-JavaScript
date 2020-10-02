@@ -1,13 +1,20 @@
 *{box-sizing: border-box;
 margin: 0;
 }
-
+  body {
+    background: url(./image/bg.jpg) no-repeat;
+    transition: transform 0.3s ease;
+    height: 100vh;
+  }
+body.show-nav{
+  transform: translatex(-300px);
+}
 nav {
-
+  background-color: #0f0e1752;
   position: fixed;
   top: 0;
   right: 0;
-  width: 200px;
+  width: 300px;
   height: 100vh;
   z-index: 100;
   transform: translateX(100%);
@@ -39,7 +46,7 @@ nav ul li:first-of-type{
 }
 
 nav ul li a {
- color: #111;
+ color: #fff;
   text-decoration: none;
 }
 
@@ -47,9 +54,28 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-header {
-  text-align: center;
+header {  
+    padding: 150px 100px;
+    
   position: relative;
+}
+.hero {
+    height: 400px;
+  width: 40%;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+ 
+  padding: 20px 100px;
+  background-color:  #0f0e1752 ; 
+  box-shadow: 0 0 10px  #0f0e1752 ; 
+}
+header h1 {
+  color:#fff;
+  font-size: 40px;
+  margin-bottom: 35px;
+}
+header p{
+  font-size: 25px;
+  margin-bottom: 35px;
 }
 
 button, input[type='submit']{
@@ -75,7 +101,8 @@ button:focus{
 .cta-btn {
   padding: 12px 30px;
   font-size: 20px;
-  
+  background-color: #00ebc7;
+  color: #111;
 }
 
 .modal-container {
@@ -86,8 +113,12 @@ button:focus{
   left: 0;
   right: 0;
   bottom: 0;
+  animation-name: openmodal;
+  animation-duration: 1s;
 }
-
+.modal-container.show-modal{
+  display: block;
+}
 .modal {
   background-color: #fff;
   border-radius: 5px;
@@ -150,4 +181,14 @@ input[type='submit']{
   top: 0;
   right: 0;
   cursor: pointer;
+}
+
+@keyframes openmodal{
+  from{
+    opacity: 0;
+  }
+
+to{
+  opacity: 1;
+}
 }
