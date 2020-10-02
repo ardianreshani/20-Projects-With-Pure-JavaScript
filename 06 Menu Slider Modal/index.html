@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <title>06 Menu Slider Modal</title>
+</head>
+<body>
+        <nav class="nav">
+          <div class="logo">
+            <img src="./image/avatar.jpg" alt="logo" class="avatar">
+          </div>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact US</a></li>
+          </ul>
+        </nav>
+        <header>
+            <button id="toggle" class="toggle">
+              <i class="fa fa-bars fa-2x"></i>
+            </button>
+            <h1>Lading page</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button id="open" class="cta-btn">Sign Up</button>
+        </header>
+
+        <div class="modal-container">
+          <div class="modal">
+            <button class="close-btn" id="close">
+              <i class="fa fa-times"></i>
+            </button>
+            <div class="modal-header">
+              <h3>Sign Up</h3>
+            </div>
+            <div class="modal-content">
+              <p>Register with us to get offers</p>
+              <form  class="modal-form">
+                <div>
+                  <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter Name" class="form-input">
+                </div>
+                <div>
+                  <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter Em" class="form-input">
+                </div>
+                <div>
+                  <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" class="form-input">
+                </div>
+                <div>
+                  <label for="password2">Confirm Password</label>
+                    <input type="password" id="password2" placeholder="Confirm Password" class="form-input">
+                </div>
+                <input type="submit" value="Submit" class="submit-btn">
+              </form>
+            </div>
+          </div>
+        </div>
+  <script src="script.js"></script>
+</body>
+</html>

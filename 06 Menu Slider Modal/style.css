@@ -1,0 +1,153 @@
+*{box-sizing: border-box;
+margin: 0;
+}
+
+nav {
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100vh;
+  z-index: 100;
+  transform: translateX(100%);
+}
+nav .logo {
+  padding: 30px 0;
+  text-align: center;
+}
+
+nav .logo img {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+}
+
+nav ul {
+  padding: 0;
+  list-style-type:none ;
+  margin: 0;
+}
+
+nav ul li {
+  border-bottom: 2px solid rgba(200,200,200, .1);
+  padding: 20px;
+}
+
+nav ul li:first-of-type{
+  border-top: 2px solid rgba(200,200,200, .1);
+}
+
+nav ul li a {
+ color: #111;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+header {
+  text-align: center;
+  position: relative;
+}
+
+button, input[type='submit']{
+  background-color: rgba(35, 117, 128,.8);
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+button:focus{
+  outline: none;
+}
+
+.toggle {
+  background-color: rgba(35, 117, 128,.8);
+  color:#fffffe;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.cta-btn {
+  padding: 12px 30px;
+  font-size: 20px;
+  
+}
+
+.modal-container {
+  background-color: rgba(0,0,0,0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 400px;
+}
+
+.modal-header {
+  background-color: #7f5af0;
+  padding: 10px;
+  color: #fff;
+}
+
+
+
+
+.modal-container p{
+  text-align: center;
+  padding-top: 10px;
+
+}
+
+.modal-form{
+  padding: 20px;
+}
+.modal-form div{
+  margin:  15px 0;
+}
+
+.modal-form label{
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  padding: 8px;
+  width: 100%;
+}
+
+input[type='submit']{
+  
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.close-btn{
+  background: transparent;
+  padding: 15px 10px;
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
