@@ -135,3 +135,13 @@ li.plus{
 .delete-btn:focus{
   outline: 0;
 }
+.btn:focus{
+  outline: 0;
+}
+
+@media (max-width: 500px){
+  .container {
+    margin: 10px auto;
+    width: 250px;
+  }
+}
