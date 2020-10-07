@@ -79,7 +79,6 @@ section:focus{
   border-radius: 4px;
   font-size: 16px;
   padding: 8px;
-  
   margin: 15px auto;
   width: 70%;
   height: 150px;
@@ -158,13 +157,12 @@ img:hover{
     grid-template-columns: repeat(2,1fr);
   }
   .text-box{
-    width: 40%;
-    justify-content: center;
-  align-items: left;
+    width: 80%;
+    
   }
   #read {
     width: 150px;
-  margin: 15px 50px ;
+    margin-left: 10%;
   }
   h3 {
     text-align: center;
@@ -173,8 +171,13 @@ img:hover{
 }
 
 @media(max-width: 576px){
+
   main {
     grid-template-columns: repeat(1,1fr);
+  }
+  .text-box{
+    width: 80%;
+    
   }
   #voices {
     width: 100%;
@@ -184,7 +187,7 @@ img:hover{
   }
   #read {
   width: 100px;
-  margin: 15px 20px ;
+  margin-left: 5%;
   }
   h3 {
     text-align: center;
