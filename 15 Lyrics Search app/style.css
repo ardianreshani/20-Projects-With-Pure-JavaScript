@@ -98,10 +98,19 @@ ul.songs li {
   justify-content: space-between;
   margin: 10px 0;
 }
+#result{
+      background-position: top right;
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+}
 .contariner {
   margin:  30px auto;
-  max-width: 100%;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .contariner h2 {
@@ -112,6 +121,7 @@ ul.songs li {
 }
 .centered {
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 .centered button{

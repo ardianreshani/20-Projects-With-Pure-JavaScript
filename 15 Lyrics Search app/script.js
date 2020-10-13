@@ -38,6 +38,31 @@ function showData(data){
      <li>`
     ).join('')}</ul> 
     `;
+    if( data.prev || data.next){
+      more.innerHTML = `
+      ${data.prev ? `<button class="btn" onclick="getMoreSongs('${data.prev}')" >Prev</button> ` : ''}
+      ${data.next ? `<button class="btn" onclick="getMoreSongs('${data.next}')">Next</button>` : ''}
+      `;
+    }else {
+      more.innerHTML = '';
+    }
+}
+async function getMoreSongs(url) {
+  const res = await fetch(`https://cors-anywhere.herokuapp.com/${url}`);
+  const data = await  res.json();
+  
+  showData(data);
+}
+
+async function getLyrics ( artist, songTitle) {
+  const res = await fetch(`${apiURL}/v1/${artist}/${songTitle}`);
+  const data = await  res.json();
+  const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
+
+  result.innerHTML =` <h2><strong>${artist} </strong>- ${songTitle}</h2>
+  <span>${lyrics}</span>
+  `;
+  more.innerHTML= '';
 }
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -49,3 +74,12 @@ form.addEventListener('submit', e => {
   }
  
 });
+
+result.addEventListener('click', e => {
+  const cliledEL = e.target;
+  if(cliledEL.tagName === 'BUTTON'){
+    const artist = cliledEL.getAttribute('data-artist');
+    const songTitle = cliledEL.getAttribute('data-songtitle');
+    getLyrics(artist, songTitle);
+  }
+})
