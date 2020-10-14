@@ -1,0 +1,35 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  color: red;
+}
+.showcase{
+  position: relative;
+  height: 100vh;
+}
+.videoshowcase {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.videoshowcase video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.videoshowcase::after{
+  content: '';
+  position: absolute;
+  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .7);
+}
