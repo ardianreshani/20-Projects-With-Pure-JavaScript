@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+  background-color: #fefefe;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+.draggable-link {
+ 
+  padding: 0;
+  list-style-type: none;
+}
+
+.draggable-link li {
+ width: 320px;
+  display: flex;
+  flex: 1;
+}
+
+.bg{
+  background-color: bisque;
+}
+
+.draggable-link .number {
+  background-color: #ff8906;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  margin: 10px 5px;
+  
+}
+.draggable-link .person-name {
+  font-weight: bold;
+  margin: auto;
+}
+.draggable-link li.right .person-name {
+ 
+    color: #3ae374;
+}
+.draggable-link li.wrong .person-name {
+  color: #ff3838;
+}
+.draggable-link li.over .draggable{
+  background-color: #fff;
+ 
+}
+.draggable {
+  width: 400px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  flex: 1;
+  border-bottom: 1px solid black;
+}
+
+.check-btn {
+  border: 0;
+  font-size: 16px;
+  font-weight: bold;
+  background: #ff8906;
+  color: #fffffe;
+  padding: 7px 20px;
+  border-radius: 7px;
+}
+.check-btn:focus{
+  outline: none;
+}
