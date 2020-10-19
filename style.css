@@ -157,12 +157,9 @@ a:hover{
   background-position: center center;
 }
 
-/* @media (max-width: 786px){
-  grid-template-columns: repeat(2,1fr) ;
-  grid-column-gap: 15px;
+.pr20{
+  background-image: url(./image/20Project.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
-
-@media (max-width: 576px) {
-  grid-template-columns: 1fr ;
-  grid-column-gap: 15px;
-} */
