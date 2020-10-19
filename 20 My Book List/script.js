@@ -10,16 +10,7 @@ class Book {
 class UI {
   static displayBooks(){
      const StoredBooks = [
-       {
-         title: 'book one',
-         author: 'filani',
-         isbn: '353552'
-       },
-       {
-        title: 'book two',
-        author: 'filan fisteki',
-        isbn: '4444'
-      },
+       
      ];
      const books = StoredBooks;
 
@@ -36,6 +27,16 @@ class UI {
       `;
       list.appendChild(row);
   }
+    static showAlert(message, className){
+      const div = document.createElement('div');
+      div.className = ` alert alert-${className}`;
+      div.appendChild(document.createTextNode(message));
+      const contariner = document.querySelector('.container');
+      const form = document.querySelector('#book-form');
+      contariner.insertBefore(div,form);
+
+      setTimeout(() => document.querySelector('.alert').remove(), 3000);
+    }
   static clearField(){
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
@@ -59,16 +60,22 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
     const isbn = document.querySelector('#isbn').value;
-
-    const book = new Book ( title, author , isbn);
+       if ( title === '' || author === '' || isbn === ''){
+         UI.showAlert('Please fill in all fields!', 'danger');
+       }else {
+        const book = new Book ( title, author , isbn);
     
-    UI.addBookList(book);
-
-    UI.clearField();
+        UI.addBookList(book);
+        
+        UI.showAlert('Book Added', 'success');
+        UI.clearField();
+       }
+    
 });
 // remove a book 
 document.querySelector('#book-list').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
+  UI.showAlert('Book Removed', 'warning');
 });
 
 
